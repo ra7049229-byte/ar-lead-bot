@@ -1,22 +1,26 @@
-# ar-lead-bot
+// ar-lead-bot – AR Tech Riyadh
+require('dotenv').config();
+const { App } = require('@slack/bolt');
 
-Slack bot for lead capture – AR Tech Riyadh
+const app = new App({
+  token: process.env.SLACK_BOT_TOKEN || 'xoxb-PLACEHOLDER',
+  signingSecret: process.env.SLACK_SIGNING_SECRET || 'placeholder',
+  socketMode: true,
+  appToken: process.env.SLACK_APP_TOKEN || 'xapp-placeholder'
+});
 
-AI agent that captures leads from Slack and forwards them to WhatsApp / CRM. Built mobile-first with Node.js and Slack Bolt.
+// /lead command – লিড নেবে
+app.command('/lead', async ({ command, ack, say }) => {
+  await ack();
+  const lead = command.text || 'No details';
+  
+  console.log(`🔥 NEW LEAD from ${command.user_name}: ${lead}`);
+  
+  // পরে এখানে WhatsApp API বসাবো
+  await say(`✅ Lead saved: *${lead}*\nAR Tech Riyadh – আমরা শীঘ্রই যোগাযোগ করব। WhatsApp: +966575019683`);
+});
 
-## ✨ Features
-- `/lead` slash command to capture name, phone, interest
-- Auto-forward to WhatsApp (+966 57 501 9683)
-- Stores leads in JSON (easy upgrade to Google Sheets)
-- Runs on Termux – no laptop needed
-
-## 🛠️ Tech
-`Node.js` • `Slack Bolt` • `OpenAI` • `Termux`
-
-## 🚀 Quick Start (Termux)
-```bash
-pkg install nodejs git -y
-git clone https://github.com/ra7049229-byte/ar-lead-bot
-cd ar-lead-bot
-npm install @slack/bolt
-node bot.js
+(async () => {
+  await app.start();
+  console.log('⚡ ar-lead-bot is running on Termux!');
+})();
