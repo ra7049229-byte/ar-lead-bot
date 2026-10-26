@@ -9,14 +9,11 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN || 'xapp-placeholder'
 });
 
-// /lead command – লিড নেবে
+// /lead command
 app.command('/lead', async ({ command, ack, say }) => {
   await ack();
   const lead = command.text || 'No details';
-  
   console.log(`🔥 NEW LEAD from ${command.user_name}: ${lead}`);
-  
-  // পরে এখানে WhatsApp API বসাবো
   await say(`✅ Lead saved: *${lead}*\nAR Tech Riyadh – আমরা শীঘ্রই যোগাযোগ করব। WhatsApp: +966575019683`);
 });
 
