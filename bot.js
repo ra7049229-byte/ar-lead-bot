@@ -18,5 +18,5 @@ app.command('/lead', async ({ command, ack, say }) => {
 
 (async () => {
   await app.start();
-  console.log('⚡ ar-lead-bot is running on Termux!');
+  console.log('⚡ ar-lead-bot is running!');
 })();
