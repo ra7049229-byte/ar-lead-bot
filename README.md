@@ -12,7 +12,6 @@
 ![Slack Bolt](https://img.shields.io/badge/Slack_Bolt-4A154B?logo=slack)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai)
-![Termux](https://img.shields.io/badge/Termux-000000?logo=android)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github)
 
 *Building AI agents from mobile.*  
@@ -30,7 +29,7 @@ WhatsApp: +966 57 501 9683
 **AI Agent Developer – Riyadh, KSA**  
 مطور وكلاء الذكاء الاصطناعي – الرياض
 
-Bangladeshi developer building automation tools at AR Tech Company, Oliya Road. I design AI agents with Slack Bolt, Node.js, and OpenAI — shipped entirely from mobile using Termux and GitHub.
+Bangladeshi developer building automation tools at AR Tech Company, Oliya Road. I design AI agents with Slack Bolt, Node.js, and OpenAI — shipped entirely from mobile using GitHub.
 
 ### 🛠️ Skills
-- Slack Bolt • Node.js • OpenAI API • Termux • GitHub Actions
+- Slack Bolt • Node.js • OpenAI API • GitHub Actions
