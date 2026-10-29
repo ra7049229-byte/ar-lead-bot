@@ -1,0 +1,30 @@
+name: Run ar-lead-bot
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # ম্যানুয়ালি চালানোর জন্য
+
+jobs:
+  start-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Start Slack bot
+        run: npm start
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
+          SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
