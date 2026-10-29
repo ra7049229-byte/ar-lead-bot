@@ -1,9 +1,8 @@
 name: Run ar-lead-bot
-
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # ম্যানুয়ালি চালানোর জন্য
+  workflow_dispatch:
 
 jobs:
   start-bot:
@@ -16,10 +15,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install deps
-        run: npm ci
+        run: npm install
 
       - name: Start Slack bot
         run: npm start
