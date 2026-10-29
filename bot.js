@@ -16,6 +16,10 @@ app.command('/lead', async ({ command, ack, say }) => {
   await say(`✅ Lead saved: *${lead}*\nAR Tech Riyadh – আমরা শীঘ্রই যোগাযোগ করব। WhatsApp: +966575019683`);
 });
 
+app.message('hello', async ({ message, say }) => {
+  await say(`Hey <@${message.user}>!`);
+});
+
 (async () => {
   await app.start();
   console.log('⚡ ar-lead-bot is running!');
